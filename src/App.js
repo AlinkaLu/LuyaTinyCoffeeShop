@@ -1,18 +1,34 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Button, MenuList } from "./components/Menu";
 
 class App extends Component {
+  state = {
+    menus: [
+      {
+        name: "Espresso",
+        price: 2.5
+      },
+      {
+        name: "Americano",
+        price: 3
+      },
+      {
+        name: "Cappuccino",
+        price: 3.5
+      },
+      {
+        name: "Latte",
+        price: 4
+      }
+    ]
+  };
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <MenuList menus={this.state.menus} />
+        <Button />
       </div>
     );
   }
